@@ -1,11 +1,14 @@
 const INITIAL_STATE = {
   isLoading: false,
   countries: [],
-  message: ""
+  message: "",
+  ikd: {}
 };
 
 export const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case "GET_IKD":
+      return { ...state, ikd: action.payload };
     case "GET_COUNTRIES_START":
       return { ...state, isLoading: true, message: "" };
     case "GET_COUNTRIES_SUCCESS":

@@ -18,4 +18,11 @@ export const getCountries = () => (dispatch) => {
         payload: e
       })
     );
+
+  axios.get("https://thegold1.herokuapp.com/ikd").then((r) =>
+    dispatch({
+      type: "GET_IKD",
+      payload: r.data
+    })
+  );
 };

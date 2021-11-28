@@ -11,6 +11,7 @@ const App = (props) => {
       <div className="card mb-3">
         <div className="card-header">Ülkeler</div>
         <div className="card-body">
+          <pre>{JSON.stringify(props.ikd, 2, 2)}</pre>
           <ul class="list-group list-group-flush">
             {props.isLoading ? (
               <span>
@@ -52,7 +53,8 @@ const App = (props) => {
 const mapStateToProps = (state) => {
   return {
     countries: state.countries,
-    isLoading: state.isLoading
+    isLoading: state.isLoading,
+    ikd: state.ikd
   };
 };
 
